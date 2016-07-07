@@ -13,11 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from swiftbackmeup.version import __version__
+
 import argparse
+
 
 def parse():
 
     parser = argparse.ArgumentParser(description='swiftbackmeup')
+
+    parser.add_argument('-v', '--version', action='version',
+                        version='%(prog)s ' + __version__)
 
     parser.add_argument('--conf',
         help='Path to configuration file')
